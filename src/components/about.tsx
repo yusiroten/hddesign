@@ -9,7 +9,7 @@ export function About() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="relative w-full h-96 rounded-lg overflow-hidden shadow-2xl">
             <Image
-              src="https://i.ibb.co/dJbrSzn/interior-design.png"
+              src="https://i.ibb.co/HpNV0kmb/Gemini-Generated-Image-g5j9dbg5j9dbg5j9.png"
               alt="Tim HD Design"
               layout="fill"
               objectFit="cover"
