@@ -9,7 +9,7 @@ const services = [
     icon: Home,
     title: 'Desain Interior Rumah',
     description: 'Menciptakan hunian yang nyaman, elegan, dan sesuai dengan gaya hidup keluarga Anda.',
-    image: { src: 'https://i.ibb.co/k6vPycr/image.png', alt: 'Interior rumah modern', hint: 'modern living room' },
+    image: { src: 'https://i.ibb.co.com/Zpqqd62W/IMG-20250818-WA0417.jpg', alt: 'Interior rumah modern', hint: 'modern living room' },
     details: [
       'Di HD Design, kami memahami bahwa rumah adalah cerminan pribadi dari setiap penghuninya. Ini bukan hanya tempat untuk beristirahat, tetapi juga ruang di mana kenangan diciptakan. Oleh karena itu, kami mendedikasikan diri untuk merancang interior rumah yang tidak hanya indah secara visual, tetapi juga fungsional dan selaras dengan kepribadian serta gaya hidup Anda. Kami percaya bahwa desain yang baik mampu meningkatkan kualitas hidup, menciptakan suasana yang hangat, dan memberikan kenyamanan maksimal bagi seluruh anggota keluarga.',
       'Proses kami dimulai dengan mendengarkan Anda. Kami ingin memahami impian, kebutuhan, dan preferensi Anda secara mendalam. Dari konsultasi awal, kami mengembangkan konsep desain yang unik dan personal. Setiap elemen, mulai dari tata letak ruang, pemilihan palet warna, hingga pencahayaan, kami pertimbangkan dengan cermat untuk memastikan setiap sudut rumah Anda memiliki cerita dan fungsi yang optimal. Kami menggabungkan estetika modern dengan sentuhan personal untuk menciptakan ruang yang benar-benar terasa seperti "rumah".',
@@ -21,7 +21,7 @@ const services = [
     icon: Building2,
     title: 'Desain Interior Villa',
     description: 'Desain eksklusif untuk villa peristirahatan Anda, memadukan kemewahan dan alam.',
-    image: { src: 'https://i.ibb.co/ccBkWn5/image.png', alt: 'Villa mewah dengan pemandangan alam', hint: 'luxury villa' },
+    image: { src: 'https://i.ibb.co.com/5WgDgWmL/IMG-20250818-WA0421.jpg', alt: 'Villa mewah dengan pemandangan alam', hint: 'luxury villa' },
     details: [
       'Villa bukan sekadar properti, melainkan sebuah destinasi peristirahatan pribadi yang menawarkan pelarian dari hiruk pikuk kehidupan sehari-hari. Kami di HD Design berspesialisasi dalam menciptakan desain interior villa yang eksklusif, di mana kemewahan berpadu serasi dengan keindahan alam sekitarnya. Tujuan kami adalah merancang sebuah surga pribadi yang memanjakan semua indra, memberikan ketenangan, dan menawarkan pengalaman menginap yang tak terlupakan bagi Anda dan tamu Anda.',
       'Setiap proyek desain villa kami awali dengan riset mendalam terhadap lokasi dan pemandangan di sekitarnya. Kami percaya bahwa desain interior villa yang sukses harus mampu "membawa masuk" keindahan eksterior ke dalam ruangan. Kami memaksimalkan penggunaan jendela besar, teras terbuka, dan material alami seperti kayu dan batu untuk menciptakan koneksi yang kuat antara ruang dalam dan luar. Konsep desain kami selalu disesuaikan untuk menonjolkan keunikan lokasi, baik itu pemandangan laut, pegunungan, maupun taman tropis.',
@@ -33,7 +33,7 @@ const services = [
     icon: Briefcase,
     title: 'Desain Interior Kantor',
     description: 'Ruang kerja yang produktif, representatif, dan meningkatkan semangat tim.',
-    image: { src: 'https://i.ibb.co/RGmSNWy/image.png', alt: 'Ruang kerja kantor modern dan kolaboratif', hint: 'modern office' },
+    image: { src: 'https://i.ibb.co.com/9HSgM2p4/IMG-20250818-WA0425.jpg', alt: 'Ruang kerja kantor modern dan kolaboratif', hint: 'modern office' },
     details: [
       'Lingkungan kerja memiliki dampak langsung terhadap produktivitas, kreativitas, dan kesejahteraan karyawan. Di HD Design, kami merancang ruang kantor yang lebih dari sekadar tempat bekerja. Kami menciptakan ekosistem yang dirancang untuk menginspirasi kolaborasi, mendorong inovasi, dan mencerminkan identitas serta budaya perusahaan Anda. Sebuah kantor yang dirancang dengan baik adalah aset strategis yang mampu menarik talenta terbaik dan meningkatkan semangat kerja tim.',
       'Pendekatan kami dalam desain interior kantor berpusat pada manusia (human-centric). Kami menganalisis alur kerja, kebutuhan fungsional setiap departemen, dan tujuan bisnis Anda. Hasilnya adalah desain yang fleksibel dan adaptif, menyediakan beragam pilihan ruang kerja—mulai dari area kerja terbuka yang dinamis, ruang fokus yang tenang, hingga area kolaboratif informal. Kami memastikan setiap meter persegi kantor Anda dimanfaatkan secara efisien untuk mendukung berbagai aktivitas kerja.',
@@ -45,7 +45,7 @@ const services = [
     icon: MessageSquare,
     title: 'Konsultasi Desain',
     description: 'Dapatkan saran ahli untuk proyek renovasi atau penataan ulang ruang Anda.',
-    image: { src: 'https://i.ibb.co/4RGzbMW/image.png', alt: 'Seorang desainer interior sedang berkonsultasi', hint: 'design consultation' },
+    image: { src: 'https://i.ibb.co.com/xqg168Bh/IMG-20250818-WA0430.jpg', alt: 'Seorang desainer interior sedang berkonsultasi', hint: 'design consultation' },
     details: [
       'Terkadang, Anda tidak memerlukan perombakan desain secara menyeluruh, tetapi hanya butuh panduan dan saran ahli untuk menyegarkan atau mengoptimalkan ruang yang ada. Layanan Konsultasi Desain kami hadir untuk memberikan solusi cepat, praktis, dan profesional bagi Anda yang ingin melakukan renovasi skala kecil, penataan ulang furnitur, atau sekadar membutuhkan pendapat kedua mengenai ide-ide desain Anda.',
       'Sesi konsultasi kami bersifat fleksibel dan dapat disesuaikan dengan kebutuhan Anda. Apakah Anda bingung memilih palet warna yang tepat untuk kamar tidur? Atau mungkin Anda kesulitan menentukan tata letak furnitur yang paling efisien di ruang keluarga? Tim desainer ahli kami siap mendengarkan tantangan Anda, memberikan analisis ruang, dan menawarkan solusi kreatif yang dapat langsung Anda terapkan. Kami memberikan panduan praktis mengenai pemilihan material, pencahayaan, hingga aksesori dekoratif.',
