@@ -7,11 +7,12 @@ import { Logo } from '@/components/logo';
 import { cn } from '@/lib/utils';
 
 const navLinks = [
-  { href: '#home', label: 'Beranda' },
-  { href: '#about', label: 'Tentang' },
-  { href: '#services', label: 'Layanan' },
-  { href: '#gallery', label: 'Galeri' },
-  { href: '#contact', label: 'Kontak' },
+  { href: '/#home', label: 'Beranda' },
+  { href: '/#about', label: 'Tentang' },
+  { href: '/#services', label: 'Layanan' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/#gallery', label: 'Galeri' },
+  { href: '/#contact', label: 'Kontak' },
 ];
 
 export function Header() {

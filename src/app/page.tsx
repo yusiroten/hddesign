@@ -7,6 +7,7 @@ import { Gallery } from '@/components/gallery';
 import { Contact } from '@/components/contact';
 import { WhatsappButton } from '@/components/whatsapp-button';
 import { Cta } from '@/components/cta';
+import { LatestBlog } from '@/components/latest-blog';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <About />
         <Services />
         <Gallery />
+        <LatestBlog />
         <Cta />
         <Contact />
       </main>
