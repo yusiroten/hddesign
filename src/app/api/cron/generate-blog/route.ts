@@ -16,8 +16,9 @@ export async function GET(request: Request) {
       return NextResponse.json({ message: 'Blog with this slug already exists' }, { status: 200 });
     }
 
-    // Dynamic image from Unsplash Source
-    const dynamicImageUrl = `https://source.unsplash.com/featured/1200x800/?interior,${encodeURIComponent(blogData.imageKeyword)}`;
+    // Dynamic image from Unsplash
+    // Using a specific interior design image that exists and appending keyword for variety (though Unsplash Source was better for this, it is deprecated)
+    const dynamicImageUrl = `https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=1200&q=${encodeURIComponent(blogData.imageKeyword)}`;
 
     const docRef = await addDoc(blogRef, {
       ...blogData,
