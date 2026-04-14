@@ -10,6 +10,8 @@ import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Skeleton } from '@/components/ui/skeleton';
+import { Loader2, Sparkles } from 'lucide-react';
+import { useToast } from "@/hooks/use-toast"
 
 interface BlogPost {
   id: string;
@@ -23,37 +25,78 @@ interface BlogPost {
 export default function BlogPage() {
   const [blogs, setBlogs] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
+  const [generating, setGenerating] = useState(false);
+  const { toast } = useToast()
+
+  const fetchBlogs = async () => {
+    try {
+      const q = query(collection(db, 'blogs'), orderBy('createdAt', 'desc'));
+      const querySnapshot = await getDocs(q);
+      const fetchedBlogs = querySnapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      })) as BlogPost[];
+      setBlogs(fetchedBlogs);
+    } catch (error) {
+      console.error("Error fetching blogs:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    const fetchBlogs = async () => {
-      try {
-        const q = query(collection(db, 'blogs'), orderBy('createdAt', 'desc'));
-        const querySnapshot = await getDocs(q);
-        const fetchedBlogs = querySnapshot.docs.map(doc => ({
-          id: doc.id,
-          ...doc.data()
-        })) as BlogPost[];
-        setBlogs(fetchedBlogs);
-      } catch (error) {
-        console.error("Error fetching blogs:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
     fetchBlogs();
   }, []);
+
+  const handleGenerate = async () => {
+    setGenerating(true);
+    try {
+      const res = await fetch('/api/cron/generate-blog');
+      const data = await res.json();
+      if (data.success) {
+        toast({
+          title: "Berhasil!",
+          description: `Artikel "${data.title}" telah di-generate.`,
+        });
+        fetchBlogs();
+      } else {
+        throw new Error(data.error || 'Gagal generate');
+      }
+    } catch (error: any) {
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: error.message,
+      });
+    } finally {
+      setGenerating(false);
+    }
+  };
 
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <Header />
       <main className="flex-grow pt-24 pb-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-primary mb-4">Blog Desain Interior</h1>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Temukan inspirasi, tips, dan tren terbaru seputar desain interior untuk mempercantik ruang Anda.
-            </p>
+          <div className="flex flex-col md:flex-row justify-between items-center mb-12 gap-6">
+            <div className="text-center md:text-left">
+              <h1 className="text-4xl font-bold text-primary mb-4">Blog Desain Interior</h1>
+              <p className="text-muted-foreground max-w-2xl">
+                Temukan inspirasi, tips, dan tren terbaru seputar desain interior untuk mempercantik ruang Anda.
+              </p>
+            </div>
+            <Button
+              onClick={handleGenerate}
+              disabled={generating}
+              variant="default"
+              className="bg-primary text-primary-foreground hover:bg-primary/90"
+            >
+              {generating ? (
+                <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Sedang Generate...</>
+              ) : (
+                <><Sparkles className="mr-2 h-4 w-4" /> Generate Artikel Baru (AI)</>
+              )}
+            </Button>
           </div>
 
           {loading ? (
@@ -104,8 +147,9 @@ export default function BlogPage() {
               ))}
             </div>
           ) : (
-            <div className="text-center py-20">
-              <p className="text-muted-foreground">Belum ada artikel saat ini. Silakan kembali lagi nanti!</p>
+            <div className="text-center py-20 bg-card/50 rounded-xl border border-dashed border-border">
+              <p className="text-muted-foreground mb-4">Belum ada artikel saat ini.</p>
+              <p className="text-sm text-muted-foreground">Klik tombol di atas untuk men-generate artikel pertama Anda dengan AI!</p>
             </div>
           )}
         </div>

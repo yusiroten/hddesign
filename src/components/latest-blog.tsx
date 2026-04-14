@@ -42,8 +42,6 @@ export function LatestBlog() {
     fetchBlogs();
   }, []);
 
-  if (!loading && blogs.length === 0) return null;
-
   return (
     <section id="blog" className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -54,9 +52,9 @@ export function LatestBlog() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {loading ? (
-            [1, 2, 3].map((i) => (
+        {loading ? (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {[1, 2, 3].map((i) => (
               <Card key={i} className="flex flex-col h-full">
                 <Skeleton className="h-48 w-full" />
                 <CardHeader>
@@ -66,9 +64,11 @@ export function LatestBlog() {
                   <Skeleton className="h-20 w-full" />
                 </CardContent>
               </Card>
-            ))
-          ) : (
-            blogs.map((blog) => (
+            ))}
+          </div>
+        ) : blogs.length > 0 ? (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {blogs.map((blog) => (
               <Link key={blog.id} href={`/blog/${blog.slug}`}>
                 <Card className="h-full hover:shadow-lg transition-all border-border overflow-hidden group">
                   <div className="relative h-48 w-full overflow-hidden">
@@ -96,9 +96,13 @@ export function LatestBlog() {
                   </CardContent>
                 </Card>
               </Link>
-            ))
-          )}
-        </div>
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-10">
+            <p className="text-muted-foreground mb-6">Belum ada artikel. AI akan men-generate artikel secara otomatis sesuai jadwal.</p>
+          </div>
+        )}
 
         <div className="text-center">
           <Button asChild variant="outline" size="lg">
