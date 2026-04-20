@@ -2,6 +2,7 @@ import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
   /* config options here */
+  serverExternalPackages: ['genkit', '@genkit-ai/googleai', '@genkit-ai/next', 'handlebars'],
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -21,6 +22,10 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'i.ibb.co.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
       },
     ],
   },
